@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { obtenerDirectores } from '../../Services/DirectoresService'
-import dayjs from 'dayjs'
+import Tabla from './Tabla'
 
 
 
@@ -11,7 +11,7 @@ export default function Directores() {
         obtenerTodos()
     }, [])
 
-    const [director, setDirectores] = useState([])
+    const [directores, setDirectores] = useState([])
 
     const obtenerTodos = async() => {
         try{
@@ -25,37 +25,6 @@ export default function Directores() {
 
     return (
     
-    <table className='table'>
-            <thead>
-                <tr>
-                    <th scope='col'>#</th>
-                    <th scope='col'>Nombre</th>
-                    <th scope='col'>Estado</th>
-                    <th scope='col'>Fecha de Creación</th>
-                    <th scope='col'>Fecha Actualización</th>
-                </tr>
-            </thead>
-            <tbody>
-                {   
-                    director.map((director, index) => {
-                        return(
-                            <tr>
-                                <th scope='row'>{index+1}</th>
-                                    <td>{director.Nombre}</td>
-                                    <td>{director.Estado}</td>
-                                    <td>{dayjs(director.fechaCreacion).format('YYYY/MM/DD')}</td>
-                                    <td>{dayjs(director.fechaActualizacion).format('YYYY/MM/DD')}</td>
-                                    <td>
-                                        <div className='form-check form-switch'>
-                                            {director.Estado ? 'Activo' : 'Inactivo '}
-                                        </div>
-                                    </td>
-                            </tr>
-                        )
-                    })
-                }
-            </tbody>
-
-        </table>
+    <Tabla directores = {directores} />
   )
 }

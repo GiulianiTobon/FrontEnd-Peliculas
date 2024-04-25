@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 
 export default function NavBar() {
     return (
-        <Router>
+        
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
@@ -16,16 +16,16 @@ export default function NavBar() {
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a className="nav-link active" href="#">Peliculas y Series</a>
+                            <Link className="nav-link active" to="/medias">Peliculas y Series</Link>
                         </li>
                         <li class="nav-item">
                             <Link className='nav-link active' to="/generos">Géneros</Link>
                         </li>
                         <li class='nav-item' href="#">
-                            <a className='nav-link active' href="<Directores />">Directores</a>    
+                            <Link className='nav-link active' to="/directores">Directores</Link>    
                         </li>
                         <li class='nav-item' href="#">
-                            <a className='nav-link active' href="#">Productoras</a>    
+                            <Link className='nav-link active' to="/productoras">Productoras</Link>    
                         </li>    
                     </ul>
                     
@@ -35,10 +35,7 @@ export default function NavBar() {
                     </form>
                     </div>
                 </div>
-                <Routes>
-                    <Route path="/generos" component= {<Generos />}/>
-                </Routes>
             </nav>
-        </Router>
+        
     )
 }

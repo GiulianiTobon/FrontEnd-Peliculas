@@ -10,7 +10,7 @@ export default function TRGenero({genero, index}) {
       <td>{dayjs(genero.fechaCreacion).format("YYYY/MM/DD")}</td>
       <td>
         <div className="form-check form-switch">
-          {genero.Estado ? "Activo" : "Inactivo "}
+          {genero.estado === "Activo" ? "Activo" : "Inactivo "}
         </div>
       </td>
     </tr>

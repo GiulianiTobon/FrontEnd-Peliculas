@@ -10,7 +10,7 @@ export default function TRMedia({media, index}) {
                 <td>{media.image}</td>
                 <td>{media.nombreTipo}</td>
                 <td>{media.nombreGenero}</td>
-                <td>{dayjs(media.AnnoEstreno).format('YYYY/MM/DD')}</td>
+                <td>{dayjs(media.AnnoEstreno).format("YYYY")}</td>
                 <td>{media.nombreDirector}</td>
                 <td>{media.nombreProductora}</td>
                 <td>{dayjs(media.fechaActualizacion).format('YYYY/MM/DD')}</td>
